@@ -12,11 +12,20 @@ def main():
     # Creating a screen object using the pygame display.set_mode method
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
-    # Creates player object
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     # Creates a Clock object to keep track of gametime
     clock = pygame.time.Clock()
     dt = 0
+
+
+    # Creating groups to update and draw
+    updateable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    
+    # Set the groups as containers for the player
+    Player.containers = (updateable, drawable)
+    
+    # Creates player object
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while(True):
         # Check if user has closed the window -> if so exits game
@@ -27,9 +36,10 @@ def main():
         # Makes screen black
         screen.fill((0, 0, 0))
 
-       # Re-render player on the screen each frame 
-        player.update(dt)
-        player.draw(screen)
+       # Re-render player on the screen each frame (added groups for all updateable things)
+        updateable.update(dt)
+        for thing in drawable:
+            thing.draw(screen)
 
         # Refreshes the screen
         pygame.display.flip()
