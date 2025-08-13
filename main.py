@@ -44,8 +44,13 @@ def main():
         # Makes screen black
         screen.fill((0, 0, 0))
 
-       # Re-render player on the screen each frame (added groups for all updateable things)
+        # Re-render player on the screen each frame (added groups for all updateable things)
         updateable.update(dt)
+        # Check if there were any collisions
+        for asteroid in asteroids:
+            if asteroid.collision_check(player):
+                print("Game over!")
+                return
         for thing in drawable:
             thing.draw(screen)
 
