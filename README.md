@@ -43,6 +43,7 @@ python main.py
 Use keyboard controls (w,a,s,d) to move the player and shoot projectiles. The game window will display the gameplay.
 
 ## Project Structure
+```bash
 asteroids/
 ├── main.py           # Entry point
 ├── player.py         # Player class and controls
@@ -51,7 +52,7 @@ asteroids/
 ├── game.py           # Game loop and logic
 ├── assets/           # Images, sounds
 └── requirements.txt  # Python dependencies
-
+```
 ## Development Notes
 
 OOP principles used: Encapsulation, Inheritance, Abstraction.
@@ -59,4 +60,5 @@ OOP principles used: Encapsulation, Inheritance, Abstraction.
 Designed modular components to support future gameplay expansion.
 
 Collision detection optimized for real-time performance in Pygame.
+
 
