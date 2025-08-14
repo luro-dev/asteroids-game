@@ -21,5 +21,42 @@ A modular, object-oriented 2D Asteroids game implemented in Python using **Pygam
 
 1. Clone the repository:  
 ```bash
-git clone <your-repo-url>
+git clone
 cd asteroids-game
+```
+2. Create a virtual environment and activate it:
+```bash
+python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate
+```
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+## Usage
+
+Launch the game from the command line:
+```bash
+python main.py
+```
+Use keyboard controls (w,a,s,d) to move the player and shoot projectiles. The game window will display the gameplay.
+
+## Project Structure
+asteroids/
+├── main.py           # Entry point
+├── player.py         # Player class and controls
+├── asteroid.py       # Asteroid class and splitting logic
+├── projectile.py     # Projectile class
+├── game.py           # Game loop and logic
+├── assets/           # Images, sounds
+└── requirements.txt  # Python dependencies
+
+## Development Notes
+
+OOP principles used: Encapsulation, Inheritance, Abstraction.
+
+Designed modular components to support future gameplay expansion.
+
+Collision detection optimized for real-time performance in Pygame.
+
